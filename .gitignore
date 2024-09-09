@@ -1,0 +1,11 @@
+Logs/*.log
+src/test/resources/TestValues/TestValues.txt
+Drivers/*.exe
+*.bat
+target/
+.idea/
+.settings/
+.project
+.classpath
+*.iml
+*.txt
