@@ -1,4 +1,4 @@
-@EjemplosX
+@Ejemplos
 @Orange
 Feature: Ingreso de Usuario
   ##Pre condicion comun a todos los casos

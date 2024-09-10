@@ -7,15 +7,15 @@ Feature: Ejemplos de las diferentes herramientas y posibilidades del framework
     Given Abro el navegador "Chrome"
 
   #Tag de caso
-  @EjemploCanales
-  Scenario: Ingresar al Servicio Canales Digitales
-    Given Me encuentro en el sitio de itickets
-    When hago click en Apps
-      And selecciono la opción Negocio - G. Técnica
-    Then ingreso a Apps Negocio Gestión Técnica
+  @Ejemplo1
+  Scenario: Completar un formulario con multiples parametros ingresados
+    Given Me encuentro en el sitio de pruebas del formulario
+    When completo el formulario
+        |Cantidad de dinero       | 1000    |
+        |Tasa de interes          | 10      |
+        |Periodo                  | Mensual |
+        |Tiempo                   | 365     |
+        |Medida de tiempo         | Año(s)  |
+      And calculo el interes
+    Then el resultado es "438000"
 
-#        |Cantidad de dinero       | 1000    |
-#        |Tasa de interes          | 10      |
-#        |Periodo                  | Mensual |
-#        |Tiempo                   | 365     |
-#        |Medida de tiempo         | Año(s)  |

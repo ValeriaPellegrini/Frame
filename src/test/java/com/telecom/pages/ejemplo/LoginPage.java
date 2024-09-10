@@ -4,7 +4,6 @@ import com.telecom.utils.AutoTool;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 public class LoginPage {
     public LoginPage() {
         PageFactory.initElements(AutoTool.getDriver(), this);
@@ -13,9 +12,9 @@ public class LoginPage {
 
     @FindBy(xpath = "//input[@name='password']") WebElement inputContrasenia;
 
-    @FindBy(xpath = "//span[@id=\"submitBtn\"]") WebElement btnIngreso;
+    @FindBy(xpath = "//form//button[@type='submit']") WebElement btnIngreso;
 
-    @FindBy(xpath = "//span[@id='loginErrorMsg']") WebElement alerta;
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']") WebElement alerta;
 
 
     public void ingresarUsuario(String usuario){

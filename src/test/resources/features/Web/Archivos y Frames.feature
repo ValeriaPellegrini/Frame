@@ -1,5 +1,5 @@
 #Tag de feature
-@EjemplosX
+@Ejemplos
 Feature: Ejemplos de ingreso de archivos y iframes
 
   #Precondición de todos los casos

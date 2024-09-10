@@ -10,7 +10,7 @@ public class HomePage {
         PageFactory.initElements(AutoTool.getDriver(), this);
     }
 
-    @FindBy(xpath = "//h2[@id='legacy-catalog-section-title-AGGC0284D1PA4ASEUQFLSEUQFLME7J']") WebElement tituloHome;
+    @FindBy(xpath = "//h6[text()='Dashboard']") WebElement tituloHome;
 
     @FindBy(xpath = "//li//span[text()='Recruitment']") WebElement seccionRecruiment;
     public boolean existeTitulo(){

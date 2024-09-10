@@ -112,6 +112,17 @@ public final class PageObjectHandler {
     public HtmlPage htmlPage() {
         return (HtmlPage) getPageObjectByClassName("HtmlPage");
     }
+	public IticketsPage IticketsPage() {
+        return (IticketsPage) getPageObjectByClassName("IticketsPage");
+    }
+
+	public AppsGTecnicaPage AppsGTecnicaPage() {
+        return (AppsGTecnicaPage) getPageObjectByClassName("AppsGTecnicaPage");
+    }
+
+	public CanalesPage CanalesPage() {
+        return (CanalesPage) getPageObjectByClassName("CanalesPage");
+    }
 
 
 

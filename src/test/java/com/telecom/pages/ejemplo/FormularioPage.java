@@ -22,10 +22,10 @@ public class FormularioPage {
     @FindBy(xpath = "//input[@value='month']") WebElement radioButtonMeses;
     @FindBy(xpath = "//input[@type='submit']") WebElement btnCalcular;
 
-    @FindBy(xpath = "//h2[@id='legacy-catalog-section-title-AGGC0284D1PA4ASEUQFLSEUQFLME7J']") WebElement resultado;
+    @FindBy(xpath = "//span[@id='interest']") WebElement resultado;
 
     public void ingresarAlSitio(){
-        AutoTool.getDriver().get(AutoTool.testValues().getValue("urlAton"));
+        AutoTool.getDriver().get(AutoTool.testValues().getValue("urlNeoris"));
     }
 
     public void setInputCantidadDinero(String cantidadDinero){
