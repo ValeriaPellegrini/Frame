@@ -124,6 +124,10 @@ public final class PageObjectHandler {
         return (CanalesPage) getPageObjectByClassName("CanalesPage");
     }
 
+	public FormularioSalesforcePage FormularioSalesforcePage() {
+        return (FormularioSalesforcePage) getPageObjectByClassName("FormularioSalesforcePage");
+    }
+
 
 
 }

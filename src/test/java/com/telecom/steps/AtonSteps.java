@@ -93,4 +93,55 @@ public class AtonSteps {
         AutoTool.addScreenshotToCucumberExecutionReport("Imagen resultante");
     }
 
+    @Then("visualizo mensaje de {string}")
+    public void deberíaVisualizarseAlerta(String mensajeEsperado) {
+        Assertions.assertEquals(mensajeEsperado,AutoTool.pageObject().CanalesPage().obtenerMensajeDeError(), "No se recibio el mensaje esperado");
+        AutoTool.addLogToCucumberExecutionReport("Se visualiza el elemento");
+        AutoTool.addScreenshotToCucumberExecutionReport("Imagen resultante");
+    }
+
+    @Given("Me encuentro en la sección de Peticiones {string} de Canales Digitales")
+    public void abroFormularioSeleccionadoDeCanalesDigitales(String servicio) {
+        AutoTool.getDriver().get(AutoTool.testValues().getValue("urlAtonFormCanalesDigitales")); //esto es para el ingreso al sitio.
+        AutoTool.webHandler().waitWebPageLoad();
+        clickBtnPedirAhora();
+        presionoSeleccionar();
+        clickEnOpcionCanales(servicio);
+        clickEnSiguiente();        
+    }
+
+    @When("se despliegan opciones del botón Seleccionar")
+    public void presionoSeleccionarSalesforce() {
+        AutoTool.pageObject().FormularioSalesforcePage().clickBtnSeleccionarSalesforce();
+    }
+
+    @And("selecciono el canal {string}")
+    public void clickEnCanal(String seleccion) {
+        AutoTool.pageObject().FormularioSalesforcePage().clickEnOpcionCanal(seleccion);
+        AutoTool.webHandler().waitWebPageLoad();
+    }
+
+    @When("completo el formulario del canal seleccionado")
+    public void completoElFormulario(DataTable dataTable) {
+        Map<String, String> map = dataTable.asMap(String.class, String.class);
+        map.forEach((clave,valor) -> AutoTool.pageObject().FormularioSalesforcePage().cargarFormulario(clave,valor));
+        AutoTool.addScreenshotToCucumberExecutionReport("Formulario cargado");
+    }
+
+    @And("selecciono Enviar petición")
+    public void clickEnviarPeticion() {
+        AutoTool.pageObject().FormularioSalesforcePage().clickEnEnviarPeticion();
+    }
+
+    @Then("se verifica la creación del ticket")
+    public void verficarTicketCreado() {
+        AutoTool.webHandler().waitWebPageLoad();
+        AutoTool.pageObject().FormularioSalesforcePage().verificarTicket();
+        AutoTool.addLogToCucumberExecutionReport("Se visualiza el elemento");
+    }
+
+    
+
+
+
 }

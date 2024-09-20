@@ -18,11 +18,12 @@ public class CanalesPage {
     @FindBy(xpath = "//button[@id='__9d1ab12d-4942-35a0-7c56-ddd334f28bcd_popup-0']") WebElement btnSalesforce;
     @FindBy(xpath = "//button[@id='__9d1ab12d-4942-35a0-7c56-ddd334f28bcd_popup-1']") WebElement btnOpen;
     @FindBy(xpath = "//button[@id='__9d1ab12d-4942-35a0-7c56-ddd334f28bcd_popup-2']") WebElement btnSiebel;
+    @FindBy(xpath = "//button[@id='__9d1ab12d-4942-35a0-7c56-ddd334f28bcd_popup-none']") WebElement btnNinguno;
     @FindBy(xpath = "//button[text()=' Siguiente ']") WebElement btnSiguiente;
     @FindBy(xpath = "//span[@id='pageTitle_5cd20818-aef0-c983-28dd-e5ad9e918194']") WebElement tituloFormSalesforce;
     @FindBy(xpath = "//span[@id='pageTitle_a9fc386a-5243-43bb-9b5b-42de9bf5ca62']") WebElement tituloFormOpen;
     @FindBy(xpath = "//span[@id='pageTitle_202d5dc2-f00d-234a-7c28-aac3989a1fad']") WebElement tituloFormSiebel;
-
+    @FindBy(xpath = "//div[@role='alert']") WebElement alerta;
 
 
     public void clickBtnPedirAhora() {
@@ -44,6 +45,8 @@ public class CanalesPage {
             btnOpen.click();
         } else if ("Siebel".equals(seleccion)){
             btnSiebel.click();
+        } else if ("Ninguno".equals(seleccion)){
+            btnNinguno.click();
         }
     }
 
@@ -62,6 +65,11 @@ public class CanalesPage {
             return false;
         }
     }
+
+    public String obtenerMensajeDeError() {
+        return alerta.getText();
+    }
+
 
     }
 
